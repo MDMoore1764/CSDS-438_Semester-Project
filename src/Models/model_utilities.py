@@ -58,6 +58,10 @@ def float32_to_int16(input: np.ndarray[np.float32]):
     int16 = input * 2**15
     return int16.astype(np.int16)
 
+def uint16_to_float32(input: np.ndarray[np.uint16]):
+    float32 = input / 2**16 - 1
+    return float32
+
 
 def get_encoder(latent_dim=16):
     encoder_inputs = keras.Input(shape=(28, 28, 1))
